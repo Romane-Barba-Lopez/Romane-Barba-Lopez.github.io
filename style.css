@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "faune";
+    src: url("Faune-Text_Regular.woff2") format("woff2");
+}
+
+
+/* .playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <400px>;
+  font-style: normal;
+} */
+
+
+p{
+    color:tomato;
+    font-size:50px;
+    text-align:center;
+}
+
+h1{
+    color: rgb(23, 127, 179);
+    font-size: 100px;
+}
+
+h2{
+    color:gray;
+    font-size: 30px;   
+}
+
+.chapo{
+    font-size: 30px;
+}
+
+/* div {
+    padding:48px;
+    margin:48px;
+} */
+
+a{
+    display: block;
+}
+
+.header{
+    background-color: beige;
+    padding: 48px;
+    margin:48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 24px;
+}
+
+.header-nav{
+    display:grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column: span 2;
+}
+
+.header-grid{
+    display:grid;
+    grid-template-columns: 1fr auto;
+}
