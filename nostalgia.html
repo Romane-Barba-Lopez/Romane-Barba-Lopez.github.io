@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projet Narratif - Itinéraire Graphique</title>
+
+<!-- Google Fonts Bebas Neue -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- AOS pour animations scroll -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Sticky Banner -->
+<div class="banner">
+    <a href="index.html" class="name">ROMANE✴︎BARBA✴︎LOPEZ</a>
+    <a href="cv.html" class="about-link">À propos</a>
+</div>
+
+<!-- Project Banner -->
+<div class="project-banner" style="background-image: url('images/photo\_5.1.png');">
+    <div>
+        <h1>NOSTALGIA</h1>
+        <h2>Photographie</h2>
+    </div>
+</div>
+
+<!-- Narrative Sections -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ Cette série de trois photographies, autour de la nostalgie, de l’enfance, de l’adolescence et du début de l’âge adulte, constitue une narration personnelle à travers la photographie.</p>
+    </div>
+</div>
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ La première partie évoque ainsi l’enfance et l’espace qui traduit cet âge, dans mon introspection personnelle.</p>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/photo_5.1.png" alt="Illustration 2">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photographe : Romane Barba Lopez">©</div>
+    </div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ La seconde partie explore l’adolescence. La salle de cinéma en devient le symbole, car c’est là que j’ai appris à grandir, à me reconnaître, à me projeter.</p>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/photo_5.2.png" alt="Illustration 3">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photographe : Romane Barba Lopezr">©</div>
+    </div>
+</div>
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ Enfin, cette dernière photographie représente, dans mon imaginaire visuel, le moment où je me suis senti adulte pour la première fois.</p>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/photo_5.3.png" alt="Illustration 4">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photographe : Romane Barba Lopez">©</div>
+    </div>
+</div>
+
+<!-- Section 7 : Réflexion personnelle -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <h2 style="color:#ffc5d9; font-size:2rem; text-align:center;">Réflexion personnelle</h2>
+        <p>
+            Ce projet m’a permis d’explorer une narration personelle et intime.
+        </p>
+    </div>
+</div>
+
+
+<!-- Footer Columns -->
+<div class="footer-columns">
+    <div class="footer-column">
+        <h3>Collaborateurs</h3>
+        <ul>
+            <li>Designer : Romane Barba Lopez</li>
+            <li>Photographe : Romane Barba Lopez</li>
+            
+        </ul>
+    </div>
+</div>
+
+<div class="project-navigation">
+    <a href="Coffret-d-artiste.html" class="nav-btn prev">← Projet précédent</a>
+    <a href="experimentations.html" class="nav-btn next">Projet suivant →</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">fermer</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000 });
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.carousel img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+// Carrousel
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    const prevBtn = carousel.querySelector('.carousel-btn.left');
+    const nextBtn = carousel.querySelector('.carousel-btn.right');
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+    });
+});
+</script>
+
+</body>
+</html>

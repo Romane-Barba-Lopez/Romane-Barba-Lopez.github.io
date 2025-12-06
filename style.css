@@ -1,4 +1,1154 @@
-.grid{
-    display;
-    
+/* ==========================
+   GLOBAL
+========================== */
+/* ==========================
+   FONTS
+========================== */
+@font-face {
+  font-family: 'dirtyline';
+  src: url('font/dirtyline.woff2') format('woff2'),
+       url('font/dirtyline.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+    font-family: "BBBPoppinsTN";
+    src: url("font/BBBPoppinsTN-TextSemiBoldItalic.woff2") format("woff2"),
+         url("font/BBBPoppinsTN-TextSemiBoldItalic.woff") format("woff");
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* ==========================
+   BODY
+========================== */
+body {
+  font-family: "BBBPoppinsTN", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ==========================
+   TITRES / BANNIERES
+========================== */
+h1, .banner .name .about-link {
+  font-family: "dirtyline", sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+h1 {
+  font-family: "dirtyline", sans-serif;
+  font-size: 40px;
+}
+
+/* Exemples de texte semi-bold italic */
+.italic-semi-bold {
+  font-family: "BBBPoppinsTN", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "BBBPoppinsTN", sans-serif;
+  color: #2E2E2E;
+  background-color: #ffc5d9;
+  line-height: 1.5;
+  background: #FAFAFA;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover { color: #ffc5d9; }
+
+h1 { font-size: 3rem; margin: 0; text-align: center; }
+h2 { font-size: 2rem; margin-bottom: 15px; text-align: center; color: #7D7D7D; }
+h3 { margin: 0; }
+p { font-size: 1rem; margin-bottom: 15px; }
+
+/* ==========================
+   STICKY BANNER
+========================== */
+.banner {
+  font-family: "dirtyline", sans-serif;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 30px;
+  background: #FAFAFA;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.banner .name {
+  font-family: "dirtyline", sans-serif !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 3rem !important;
+  font-weight: normal !important; /* taille plus grande, à ajuster selon tes goûts */
+}
+.banner .about-link {
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 500;
+  white-space: nowrap;
+  justify-self: end;
+}
+.banner .about-link:hover { color: #ffc5d9; }
+
+/* ==========================
+   MARQUEE
+========================== */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #FAFAFA;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0;
+}
+.marquee-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+.marquee-item {
+  font-size: 2.5rem;
+  padding-right: 3rem;
+  white-space: nowrap;
+  color: #ffc5d9;
+  font-family: "BBBPoppinsTN", sans-serif;
+}
+@keyframes scroll {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-50%); 
+  }
+}
+
+/* ==========================
+   PROJECT BANNER
+========================== */
+.project-banner {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  align-items: end;
+  padding: 20px 30px;
+}
+.project-banner h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin: 0;
+  text-align: left;
+  grid-row: 2;
+}
+.project-banner h2 {
+  color: #ebebeb;
+  font-size: 2rem;
+  margin-top: 5px;
+  text-align: left;
+  grid-row: 3;
+}
+.project-banner h1,
+.project-banner h2 {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+.section,
+.section-4 {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  display: grid;
+  justify-items: center;
+}
+.section-text {
+  width: 100%;
+  font-size: 1rem;
+  text-align: justify;
+}
+.section-text blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffc5d9;
+  border-left: 4px solid #ffc5d9;
+  padding-left: 15px;
+  margin: 20px 0;
+}
+.section-text ul.book-list {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+.section-text ul.book-list li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* ==========================
+   CAROUSEL
+========================== */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.carousel-track { 
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transition: transform 0.5s ease-in-out; 
+}
+.carousel img { 
+  width: 100%; 
+  object-fit: cover; 
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.7);
+  color: #2E2E2E;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* assure que les boutons sont toujours au-dessus */
+}
+
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* ==========================
+   PROJECTS GRID
+========================== */
+/* Conteneur des cartes projets */
+
+.projects-section {
+  background-color: #ffc5d9; /* rose */
+  padding: 50px 0;           /* espace au-dessus et en dessous */
+  width: 100%;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 50px auto;
+  background: #ffc5d9; /* fond derrière les cartes */
+  padding: 0%;       /* espace autour des cartes */
+  border-radius: 0px;
+}
+
+/* Cartes individuelles */
+.project-card {
+  background: #fff;   /* cartes blanches pour contraste */
+  border-radius: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+}
+
+.project-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.3s, filter 0.5s;
+  filter: grayscale(100%); /* effet noir et blanc par défaut */
+}
+
+.project-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05); /* léger zoom au hover */
+}
+
+/* Texte et titres des cartes */
+.project-card h3 {
+  margin: 15px 0 8px;
+  color: #000000; /* vert vif */
+  transition: color 0.3s;
+}
+
+.project-card h3:hover {
+  color: #000000; /* vert hover légèrement plus foncé */
+}
+
+
+.project-card p {
+  padding: 0 15px;
+  font-size: 1rem;
+  color: #444;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-content {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0px;
+  overflow: hidden;
+  display: grid;
+  gap: 20px;
+}
+
+/* ==========================
+   NEXT PROJECT / NAVIGATION
+========================== */
+.next-project,
+.project-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 50px 0;
+  padding: 0 30px;
+}
+.next-project a,
+.project-navigation .nav-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ffc5d9;
+  color: white;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-size: 1.2rem;
+}
+.next-project a:hover,
+.project-navigation .nav-btn:hover { 
+  background: #ffb3cc; 
+  color: #333; 
+}
+.project-navigation .nav-btn.prev {
+  justify-self: start;
+}
+.project-navigation .nav-btn.next {
+  justify-self: end;
+}
+
+/* ==========================
+   BEFORE / AFTER
+========================== */
+.before-after { 
+  width: 100%; 
+  max-width: 800px; 
+  margin: auto; 
+}
+.ba-container { 
+  position: relative; 
+  overflow: hidden; 
+  border-radius: 10px; 
+}
+.ba-img { 
+  position: absolute; 
+  width: 100%; 
+  object-fit: cover; 
+}
+.ba-img.after { 
+  clip-path: inset(0 0 0 50%); 
+}
+.ba-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #ffc5d9;
+  cursor: ew-resize;
+}
+
+/* ==========================
+   TIMELINE
+========================== */
+.historical-timeline {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 100px 0;
+  min-height: 300px;
+}
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #cfcfcf;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.timeline-event {
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.timeline-event .timeline-date {
+  padding: 8px 20px;
+  background: #fff;
+  border: 3px solid #2E2E2E;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.timeline-event.top { 
+  top: 0;
+}
+.timeline-event.bottom { 
+  bottom: 0;
+}
+.timeline-event p {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ==========================
+   CONTACT BANNER
+========================== */
+.contact-banner {
+  background: #e9e9e9;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  margin-top: 80px;
+  font-family: "BBBPoppinsTN", sans-serif;
+
+}
+
+.contact-banner h2 {
+  font-size: 2.5rem;
+  color: #2E2E2E;
+  margin: 0;
+}
+
+.contact-banner p {
+  font-size: 1.2rem;
+  color: #7D7D7D;
+  margin: 0;
+}
+
+.contact-button {
+  display: inline-block;
+  width: auto;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background: #ffc5d9;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+  margin-top: 10px;
+}
+.contact-button:hover { 
+  background: #ffc5d9;
+  color: #333; 
+}
+
+.contact-apps {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.contact-apps img {
+  width: 50px;
+  transition: transform 0.3s;
+}
+.contact-apps img:hover { 
+  transform: scale(1.2); 
+}
+--------------
+/* 2 colonnes */
+.contact-banner {
+  background: #e9e9e9;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 20px 40px;
+  margin-top: 80px;
+  text-align: left; /* important */
+}
+
+/* centre le texte juste sur mobile */
+@media(max-width: 800px) {
+  .contact-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* Colonne gauche (garde un spacing doux) */
+.contact-col-left > * {
+  margin-bottom: 20px;
+}
+
+/* Bouton PDF : légère variation possible */
+.portfolio-button {
+  background: #ffc5d9;
+}
+.portfolio-button:hover {
+  background: #ffc5d9;
+  color: #333;
+}
+
+/* Sources */
+.contact-sources {
+  font-size: 1rem;
+  color: #7D7D7D;
+}
+.contact-sources a {
+  color: #7D7D7D;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-sources a:hover {
+  color: #2E2E2E;
+}
+
+/* Col droite */
+.contact-col-right {
+  display: flex;
+  justify-content: center; /* centré horizontalement */
+}
+
+/* grille d’icônes existante, adaptée */
+.contact-apps {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+
+/* ==========================
+   FOOTER (fusionné avec contact)
+========================== */
+footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  background: #fff;
+  margin: 0;
+}
+
+footer p {
+  font-size: 0.95rem;
+  color: #7D7D7D;
+  margin: 0;
+}
+
+footer span {
+  color: #2E2E2E;
+  font-weight: bold;
+}
+
+/* ==========================
+   FOOTER COLUMNS
+========================== */
+.project-footer-columns,
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+.project-footer-columns .footer-column,
+.footer-columns .footer-column {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ==========================
+   CV PAGE
+========================== */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: #fff;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 10px;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  color: #7D7D7D;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contact {
+  background: #fff;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+  font-family: "BBBPoppinsTN", sans-serif;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #2E2E2E;
+}
+
+.contact a {
+  color: #ffc5d9;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.contact a:hover {
+  color: #ffb3cc;
+}
+
+/* Responsive */
+@media(max-width: 700px) {
+  .contact {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+.grille-2-colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.grille-2-colonnes .colonne {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.grille-2-colonnes h2 {
+  font-size: 2rem;
+  color: #ffc5d9;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.grille-2-colonnes p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #2E2E2E;
+  text-align: left;
+}
+
+.grille-2-colonnes strong {
+  color: #ffc5d9;
+  font-weight: normal;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  margin-top: 60px;
+    font-family: "BBBPoppinsTN", sans-serif;
+
+}
+
+footer p {
+  font-size: 1rem;
+  color: #7D7D7D;
+  margin: 0;
+}
+
+footer span {
+  color: #2E2E2E;
+  font-weight: bold;
+}
+
+/* Responsive CV */
+@media (max-width: 768px) {
+  .grille-2-colonnes {
+    grid-template-columns: 1fr;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header h2 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1100px) { 
+  .projects-grid { 
+    grid-template-columns: repeat(3,1fr); 
+  } 
+}
+
+@media (max-width: 900px) {
+  .banner { 
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  
+  .banner .about-link { 
+    font-size: 1.2rem; 
+  }
+  .project-banner h1 { 
+    font-size: 2rem; 
+  }
+  .project-banner h2 { 
+    font-size: 1.2rem; 
+  }
+  .section-text { 
+    font-size: 1rem; 
+  }
+  .footer-columns,
+  .project-footer-columns { 
+    flex-direction: column; 
+  }
+}
+
+@media (max-width: 800px) { 
+  .projects-grid { 
+    grid-template-columns: repeat(2,1fr); 
+  } 
+}
+
+@media (max-width: 500px) { 
+  .projects-grid { 
+    grid-template-columns: repeat(1,1fr); 
+  } 
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none; /* caché par défaut */
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox {
+  overflow: auto;
+}
+
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-family: 'BBBPoppinsTN', sans-serif;
+  background: #ffc5d9;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  z-index: 10001;
+}
+
+#lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: #ffc5d9;
+}
+
+.project-banner .my-photo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  opacity: 0.3;
+}
+/*/_________________________________________________________/*/
+.project-banner {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  background-image: url('bannière.jpg'); /* ton image de fond */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  padding: 20px 40px;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+.project-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.project-banner h1,
+.project-banner h2 {
+  position: relative; /* pour être au-dessus de l’overlay */
+  z-index: 2;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.project-banner h1 {
+  font-family: 'Crozet', sans-serif;
+  font-size: 3rem;
+  grid-row: 2;
+}
+
+.project-banner h2 {
+  font-family: 'BBBPoppinsTN', sans-serif;
+  font-size: 2rem;
+  margin-top: 5px;
+  grid-row: 3;
+}
+
+/* Bannière principale */
+.hero-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'BBBPoppinsTN', sans-serif;
+}
+
+/* Overlay sombre pour lisibilité du texte */
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* augmente la lisibilité */
+  z-index: 1;
+}
+
+/* Contenu au-dessus de l'overlay */
+.hero-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 2;
+  align-items: center;
+}
+
+/* Texte */
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #e1e1e1;
+  line-height: 1.2;
+}
+
+/* Photo */
+.hero-photo img {
+  height: 100%; /* même hauteur que la bannière */
+  width: auto;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-photo img {
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: #2E2E2E;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #ffc5d9;
+}
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  background: #ffc5d9;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0;             /* invisible par défaut */
+  pointer-events: none;   /* non cliquable par défaut */
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
+  z-index: 1000;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;  /* devient cliquable */
+}
+
+#back-to-top:hover {
+  background: #ffb3cc;
+  color: #333;
+}
+/* ==========================
+   TYPOGRAPHIE POUR PROJETS ET CV
+========================== */
+
+body.project-page a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+body.project-page a:hover {
+  color: #ffc5d9;
+}
+
+body.project-page h1,
+body.project-page h2,
+body.project-page h3 {
+  font-family: 'dirtyline', sans-serif;
+  font-weight: normal;
+
+  /* Active les ligatures pour cette police */
+  font-feature-settings: "liga" 1;
+
+  /* Optionnel : pour les navigateurs qui préfèrent la syntaxe moderne */
+  font-variant-ligatures: common-ligatures;
+}
+/* Slide wrapper */
+.carousel-track .slide {
+  position: relative;
+}
+
+.carousel {
+    position: relative;
+}
+
+/* bouton © */
+.credit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.411);
+    color: white;
+    padding: 4px 6px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* tooltip caché */
+.credit::after {
+    content: attr(data-credit);
+    position: absolute;
+    bottom: 120%;
+    right: 0;
+    background: black;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 9999;
+}
+
+/* au hover -> visible */
+.credit:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ==========================
+   TYPOGRAPHIE GLOBALE – VERSION FINALE
+========================== */
+
+body.home h1,
+body.home h2,
+body.home h3,
+body.home .banner .name,
+body.home .banner .about-link
+body.home .hero-text h1,
+body.home header h1 {
+    color: #000000;
+}
+
+/* ==========================
+   TEXTE NORMAL – BBBPoppinsTN Semi-bold Italic
+========================== */
+p,
+h2,
+h3,
+span,
+a,
+li,
+.section-text,
+.section-text blockquote,
+.contact p,
+.contact a,
+footer p,
+.grille-2-colonnes p,
+.grille-2-colonnes strong,
+.project-card p,
+.project-card h3,
+.hero-text h2,
+.project-banner h2,
+header h2 {
+  font-family: "BBBPoppinsTN", sans-serif !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+}
+
+/* ==========================
+   Liens / boutons – conservant couleur et hover
+========================== */
+a,
+.contact-button,
+.project-navigation .nav-btn,
+.next-project a {
+  font-family: "BBBPoppinsTN", sans-serif !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+}
+.project-card img {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.project-card img:hover .project-banner:hover {
+  filter: grayscale(0%);
+}
+

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>expérimentations</title>
+
+<!-- Google Fonts Bebas Neue -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- AOS pour animations scroll -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Sticky Banner -->
+<div class="banner">
+    <a href="index.html" class="name">ROMANE✴︎BARBA✴︎LOPEZ</a>
+    <a href="cv.html" class="about-link">À propos</a>
+</div>
+
+<!-- Project Banner -->
+<div class="project-banner" style="background-image: url('images/mockup_serigraphie.jpg');">
+    <div>
+        <h1>EXPERIMENTATIONS</h1>
+        <h2>Travail de trames, cartographie, Risographie, Fanzine, ...</h2>
+    </div>
+</div>
+
+<!-- Narrative Sections -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ Ces projets sont des moyens d'expérimenter et de me familiariser avec différentes techniques importantes, tel que le principes des trames, la risographie, la cartographie, la sérigraphie, ...</p>
+    </div>
+
+    <!-- Narrative Sections -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+    <h2>Trames</h2>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/trames_1.jpg" alt="Illustration 1">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+        <div class="credit" data-credit="Romane Barba Lopez/Léa Tramati">©</div>
+    </div>
+</div>
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+        <h2>Sérigraphie</h2>
+        </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/mockup_serigraphie.jpg" alt="Illustration 2">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photo par Nom de l’auteur">©</div>
+    </div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <h2>Risographie</h2>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/affiche_riso.jpg" alt="Illustration 3">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photo par Nom de l’auteur">©</div>
+    </div>
+</div>
+
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ Cartographie</p>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="images/carte_pao.jpg" alt="Illustration 4">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photo par Nom de l’auteur">©</div>
+    </div>
+</div>
+
+<!-- Section 7 : Réflexion personnelle -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <h2 style="color:#ffc5d9; font-size:2rem; text-align:center;">Réflexion personnelle</h2>
+        <p>Ces différents projets ont été très enrichissant en terme de connaissance des possibles pour les autres projets que j'ai pu faire.</p>
+    </div>
+</div>
+
+<!-- Footer Columns -->
+<div class="footer-columns">
+    <div class="footer-column">
+        <h3>Sources utilisées</h3>
+        <ul>
+            <li>Revue Itinéraire Graphique n°21</li>
+            <li>Articles sur la typographie féminine</li>
+            <li>Bibliothèque de design graphique en ligne</li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Collaborateur·ice·s</h3>
+        <ul>
+            <li>Sérigraphie : Léa Tramati</li>
+            <li>Risographie : Léa Tramati</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project-navigation">
+    <a href="nostalgia.html" class="nav-btn prev">← Projet précédent</a>
+    <a href="credulite_fanatisme_superstition.html" class="nav-btn next">Projet suivant →</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000 });
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.carousel img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+// Carrousel
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    const prevBtn = carousel.querySelector('.carousel-btn.left');
+    const nextBtn = carousel.querySelector('.carousel-btn.right');
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+    });
+});
+</script>
+
+</body>
+</html>
