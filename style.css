@@ -1151,4 +1151,96 @@ a,
 .project-card img:hover .project-banner:hover {
   filter: grayscale(0%);
 }
+.intro-content {
+  margin-top: 50px;
+}
 
+.intro-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('pres.jpg');
+  background-size: cover;
+  background-position: center;
+  transform-origin: center center;
+  transition: transform 0.2s ease-out, opacity 0.3s ease-out;
+}
+
+
+/* positionnement du texte */
+.intro-content {
+  position: absolute;
+  top: 50%;
+  right: 5%; /* espace à droite */
+  transform: translateY(-50%);
+  text-align: right; /* alignement du texte */
+  color: white;
+  font-family: 'BBBPoppinsTN', sans-serif;
+  z-index: 2;
+  max-width: 40ch;
+}
+
+
+.intro-content h2 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* fallback pour mobiles si besoin */
+  }
+}
+.scroll-down-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+/* hover */
+.scroll-down-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* petit rebond animé */
+.scroll-down-btn span {
+  display: inline-block;
+  animation: bounce 1.4s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .scroll-down-btn {
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+}
