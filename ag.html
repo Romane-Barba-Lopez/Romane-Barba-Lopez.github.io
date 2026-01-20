@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agence Générale</title>
+
+<!-- Google Fonts Bebas Neue -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- AOS pour animations scroll -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- Sticky Banner -->
+<div class="banner">
+    <a href="index.html" class="name">ROMANE✴︎BARBA✴︎LOPEZ</a>
+    <a href="cv.html" class="about-link">À propos</a>
+</div>
+
+<!-- Project Banner -->
+<div class="project-banner" style="background-image: url('ag.jpg');">
+    <div>
+        <h1>AGENCE GENERALE</h1>
+        <h2>Typographie</h2>
+        <h3>2025</h3>
+    </div>
+</div>
+
+<!-- Narrative Sections -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <p>✦ En partant du plaque émaillée faisant partie de la collection de l'ESAD Amiens, nous devions s'inspirer du lettrage et en faire un alphabet complet (en haut de casse).</p>
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="ag1.jpg" alt="Illustration 1">
+            <img src="ag2.jpg" alt="Illustration 1">
+            <img src="ag3.jpg" alt="Illustration 1">
+            <img src="ag4.jpg" alt="Illustration 1">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="">©</div>
+    </div>
+</div>
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="ag5.jpg" alt="Illustration 2">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="Photo par Nom de l’auteur">©</div>
+    </div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="ag7.jpg" alt="Illustration 3">
+            <img src="ag6.jpg" alt="Illustration 3b">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="">©</div>
+    </div>
+</div>
+
+<div class="section alt" data-aos="fade-up">
+    <div class="section-text">
+    </div>
+    <div class="carousel">
+        <button class="carousel-btn left">&#8249;</button>
+        <div class="carousel-track">
+            <img src="ag8.jpg" alt="Illustration 4">
+            <img src="ag9.jpg" alt="Illustration 4b">
+        </div>
+        <button class="carousel-btn right">&#8250;</button>
+                <div class="credit" data-credit="">©</div>
+    </div>
+</div>
+
+<!-- Section 7 : Réflexion personnelle -->
+<div class="section" data-aos="fade-up">
+    <div class="section-text">
+        <h2 style="color:#ffc5d9; font-size:2rem; text-align:center;">Réflexion personnelle</h2>
+        <p>
+            Ce projet m’a permis de découvrir fontra, et de me familiariser avec la création de caractères typographiques
+        </p>
+        <p>
+            l'accessibilité de ce nouveau medium m'a permis d'expérimenter librement dans d'autres projets.
+        </p>
+
+    </div>
+</div>
+
+
+<div class="historical-timeline">
+
+    <div class="timeline-line"></div>
+
+    <!-- Événement 1 -->
+    <div class="timeline-event top" style="left: 10%">
+        <div class="timeline-date">choix et recherche de la plaque</div>
+    </div>
+
+    <!-- Événement 2 -->
+    <div class="timeline-event bottom"style="left: 30%">
+        <div class="timeline-date">experimentation par modules, sur papier</div>
+    </div>
+
+    <!-- Événement 3 -->
+    <div class="timeline-event top" style="left: 50%">
+        <div class="timeline-date">découverte de fontra</div>
+    </div>
+
+    <!-- Événement 4 -->
+    <div class="timeline-event bottom" style="left: 70%">
+        <div class="timeline-date">finalisation de l'alphabet</div>
+    </div>
+
+    <!-- Événement 5 -->
+    <div class="timeline-event top" style="left: 90%">
+        <div class="timeline-date">réalisation d'un spécimen collectif</div>
+    </div>
+
+</div>
+
+<!-- Footer Columns -->
+<div class="footer-columns">
+    <div class="footer-column">
+        <h3>Sources utilisées</h3>
+        <ul>
+            <i>Plaque émaillée de la collection de l'ESAD d'Amiens</i>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Collaborateurs</h3>
+        <ul>
+        </ul>
+    </div>
+</div>
+
+<div class="project-navigation">
+    <a href="pov.html" class="nav-btn prev">← Projet précédent</a>
+    <a href="itineraire_graphique.html" class="nav-btn next">Projet suivant →</a>
+</div>
+
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img src="" alt="" id="lightbox-img">
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000 });
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.carousel img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+// Carrousel
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.children;
+    const prevBtn = carousel.querySelector('.carousel-btn.left');
+    const nextBtn = carousel.querySelector('.carousel-btn.right');
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+    });
+});
+</script>
+
+</body>
+</html>
